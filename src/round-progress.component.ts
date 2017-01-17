@@ -63,7 +63,7 @@ import { RoundProgressEase } from './round-progress.ease';
   ]
 })
 export class RoundProgressComponent implements OnChanges {
-  @ViewChild('path') private _path;
+  @ViewChild('path') private _path: any;
   private _lastAnimationId: number = 0;
 
   constructor(
@@ -142,7 +142,7 @@ export class RoundProgressComponent implements OnChanges {
   }
 
   /** Change detection callback. */
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: any): void {
     if (changes.current) {
       this._animateChange(changes.current.previousValue, changes.current.currentValue);
     } else {
